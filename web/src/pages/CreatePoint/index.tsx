@@ -143,11 +143,15 @@ const CreatePoint: React.FC = () => {
 			items,
 		};
 
-		await api.post('/points', data);
+		try {
+			await api.post('/points', data);
 
-		alert('Ponto de coleta criado');
+			alert('Ponto de coleta criado');
 
-		history.push('/');
+			history.push('/');
+		} catch (err) {
+			alert(err);
+		}
 	}
 
 	return (
