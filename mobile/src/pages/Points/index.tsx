@@ -15,6 +15,8 @@ import MapView, { Marker } from "react-native-maps";
 import { SvgUri } from "react-native-svg";
 import * as Location from "expo-location";
 
+import { Container } from "./styles";
+
 import api from "../../services/api";
 
 interface Item {
@@ -115,7 +117,7 @@ const Points: React.FC = () => {
 
   return (
     <SafeAreaView style={{ flex: 1 }}>
-      <View style={styles.container}>
+      <Container>
         <TouchableOpacity onPress={handleNavigateBack}>
           <Icon name="arrow-left" size={20} color="#34cb79" />
         </TouchableOpacity>
@@ -160,7 +162,7 @@ const Points: React.FC = () => {
             </MapView>
           )}
         </View>
-      </View>
+      </Container>
 
       <View style={styles.itemsContainer}>
         <ScrollView
@@ -189,11 +191,7 @@ const Points: React.FC = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    paddingHorizontal: 32,
-    paddingTop: 42,
-  },
+  container: {},
 
   title: {
     fontSize: 20,
