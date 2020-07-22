@@ -8,7 +8,7 @@ import Detail from "./pages/Detail";
 
 const AppStack = createStackNavigator();
 
-const Routes = () => {
+const Routes: React.FC = ({ toggleTheme }) => {
   return (
     <NavigationContainer>
       <AppStack.Navigator

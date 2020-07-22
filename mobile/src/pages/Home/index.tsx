@@ -23,7 +23,7 @@ import {
   SwitchContainer,
 } from "./styles";
 
-const Home: React.FC = () => {
+const Home: React.FC = ({}) => {
   const [uf, setUf] = useState("");
   const [city, setCity] = useState("");
 
@@ -32,9 +32,6 @@ const Home: React.FC = () => {
   function handleNavigationToPoints() {
     navigation.navigate("Points", { uf, city });
   }
-
-  const [isEnabled, setIsEnabled] = useState(false);
-  const toggleSwitch = () => setIsEnabled((previousState) => !previousState);
 
   return (
     <KeyboardAvoidingView
@@ -49,10 +46,9 @@ const Home: React.FC = () => {
           <SwitchText>Dark Mode</SwitchText>
           <SwitchButton
             trackColor={{ false: "#ccc", true: "#FFF" }}
-            thumbColor={isEnabled ? "#34cb79" : "#000"}
+            thumbColor={theme == "dark" ? "#34cb79" : "#000"}
             ios_backgroundColor="#3e3e3e"
-            onValueChange={toggleSwitch}
-            value={isEnabled}
+            onValueChange={toggleTheme}
           />
         </SwitchContainer>
 
